@@ -16,8 +16,7 @@
 		D3A4BA7B2B32B65B003001C7 /* CoupangTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BA7A2B32B65B003001C7 /* CoupangTests.swift */; };
 		D3A4BA852B32B65B003001C7 /* CoupangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BA842B32B65B003001C7 /* CoupangUITests.swift */; };
 		D3A4BA872B32B65B003001C7 /* CoupangUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BA862B32B65B003001C7 /* CoupangUITestsLaunchTests.swift */; };
-		D3A4BA942B3BD935003001C7 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BA932B3BD935003001C7 /* CategoryVC.swift */; };
-		D3A4BA962B3BE0F8003001C7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BA952B3BE0F8003001C7 /* CollectionViewCell.swift */; };
+		D3A4BA9E2B3C07EF003001C7 /* PagingKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3A4BA9D2B3C07EF003001C7 /* PagingKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +50,6 @@
 		D3A4BA802B32B65B003001C7 /* CoupangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoupangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A4BA842B32B65B003001C7 /* CoupangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupangUITests.swift; sourceTree = "<group>"; };
 		D3A4BA862B32B65B003001C7 /* CoupangUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupangUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D3A4BA932B3BD935003001C7 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
-		D3A4BA952B3BE0F8003001C7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A4BA9E2B3C07EF003001C7 /* PagingKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,8 +105,6 @@
 				D3A4BA652B32B659003001C7 /* SceneDelegate.swift */,
 				D3A4BA672B32B659003001C7 /* LoginVC.swift */,
 				D3A4BA692B32B659003001C7 /* Main.storyboard */,
-				D3A4BA932B3BD935003001C7 /* CategoryVC.swift */,
-				D3A4BA952B3BE0F8003001C7 /* CollectionViewCell.swift */,
 				D3A4BA6C2B32B65B003001C7 /* Assets.xcassets */,
 				D3A4BA6E2B32B65B003001C7 /* LaunchScreen.storyboard */,
 				D3A4BA712B32B65B003001C7 /* Info.plist */,
@@ -149,6 +145,9 @@
 			dependencies = (
 			);
 			name = Coupang;
+			packageProductDependencies = (
+				D3A4BA9D2B3C07EF003001C7 /* PagingKit */,
+			);
 			productName = Coupang;
 			productReference = D3A4BA602B32B659003001C7 /* Coupang.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +220,9 @@
 				Base,
 			);
 			mainGroup = D3A4BA572B32B659003001C7;
+			packageReferences = (
+				D3A4BA9C2B3C07EF003001C7 /* XCRemoteSwiftPackageReference "PagingKit" */,
+			);
 			productRefGroup = D3A4BA612B32B659003001C7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,10 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3A4BA962B3BE0F8003001C7 /* CollectionViewCell.swift in Sources */,
 				D3A4BA682B32B659003001C7 /* LoginVC.swift in Sources */,
 				D3A4BA642B32B659003001C7 /* AppDelegate.swift in Sources */,
-				D3A4BA942B3BD935003001C7 /* CategoryVC.swift in Sources */,
 				D3A4BA662B32B659003001C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +615,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D3A4BA9C2B3C07EF003001C7 /* XCRemoteSwiftPackageReference "PagingKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kazuhiro4949/PagingKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D3A4BA9D2B3C07EF003001C7 /* PagingKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3A4BA9C2B3C07EF003001C7 /* XCRemoteSwiftPackageReference "PagingKit" */;
+			productName = PagingKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D3A4BA582B32B659003001C7 /* Project object */;
 }

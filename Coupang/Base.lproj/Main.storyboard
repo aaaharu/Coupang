@@ -205,14 +205,24 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TJK-3M-qQp">
+                                <rect key="frame" x="16" y="334" width="361" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BWn-3U-acl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="TJK-3M-qQp" firstAttribute="trailing" secondItem="3cq-hI-wIo" secondAttribute="trailing" id="FY0-cz-aR1"/>
                             <constraint firstItem="BWn-3U-acl" firstAttribute="bottom" secondItem="3cq-hI-wIo" secondAttribute="bottom" constant="517" id="Hak-6X-plD"/>
+                            <constraint firstItem="TJK-3M-qQp" firstAttribute="leading" secondItem="3cq-hI-wIo" secondAttribute="leading" id="QeA-eQ-5TC"/>
                             <constraint firstItem="3cq-hI-wIo" firstAttribute="leading" secondItem="BWn-3U-acl" secondAttribute="leading" constant="16" id="V7j-tn-mOw"/>
                             <constraint firstItem="3cq-hI-wIo" firstAttribute="top" secondItem="BWn-3U-acl" secondAttribute="top" constant="21" id="ekE-AG-Zj7"/>
                             <constraint firstItem="BWn-3U-acl" firstAttribute="trailing" secondItem="3cq-hI-wIo" secondAttribute="trailing" constant="16" id="qpb-ez-g2A"/>
+                            <constraint firstItem="TJK-3M-qQp" firstAttribute="top" secondItem="3cq-hI-wIo" secondAttribute="bottom" constant="82" id="tSv-DL-9rI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HxP-lo-r52">
@@ -260,12 +270,72 @@
                     <connections>
                         <outlet property="bagButton" destination="0wx-Dk-tRo" id="AkN-BB-O3w"/>
                         <outlet property="myCollectionView" destination="3cq-hI-wIo" id="beZ-DS-xBR"/>
+                        <outlet property="mySegmentControl" destination="TJK-3M-qQp" id="caF-u3-hpL"/>
                         <outlet property="searchButton" destination="5gE-hX-RO1" id="IOi-ND-Vpf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rtj-Xr-OrK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1864.885496183206" y="721.83098591549299"/>
+        </scene>
+        <!--Vertical SegmentVC-->
+        <scene sceneID="BNJ-Id-8CT">
+            <objects>
+                <viewController id="KaS-Eb-UXQ" customClass="VerticalSegmentVC" customModule="Coupang" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QPb-yO-GTE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJc-pb-YIY">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="149"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="99U-I9-ttu" kind="embed" id="nlJ-64-mF8"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKo-De-SMb">
+                                <rect key="frame" x="0.0" y="140" width="393" height="712"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="Oiw-bf-dQu" kind="embed" id="tGu-iY-Pp2"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IEW-6e-3uU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Jy-2F-3Rn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2727.4809160305344" y="733.80281690140851"/>
+        </scene>
+        <!--Paging Menu View Controller-->
+        <scene sceneID="dKH-fM-mje">
+            <objects>
+                <viewController id="99U-I9-ttu" customClass="PagingMenuViewController" customModule="PagingKit" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wfk-4t-hBq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="149"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aek-rg-M41" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3711" y="539"/>
+        </scene>
+        <!--Paging Menu View Controller-->
+        <scene sceneID="KGu-DY-KzA">
+            <objects>
+                <viewController id="Oiw-bf-dQu" customClass="PagingMenuViewController" customModule="PagingKit" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aYJ-mu-HYk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="712"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BkB-mX-BZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3686" y="1038"/>
         </scene>
     </scenes>
     <resources>

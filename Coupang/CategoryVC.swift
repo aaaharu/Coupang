@@ -12,6 +12,7 @@ class CategoryVC: UIViewController, UICollectionViewDelegate {
     
     fileprivate var myCVData: [String] = []
     
+    @IBOutlet weak var mySegmentControl: UISegmentedControl!
     @IBOutlet weak var searchButton: UIButton!
 
     @IBOutlet weak var bagButton: UIButton!
@@ -35,6 +36,9 @@ class CategoryVC: UIViewController, UICollectionViewDelegate {
     
     fileprivate func setupUI() {
             print(#fileID, #function, #line, "-  주석 ")
+        
+    
+        
         
         searchButton.frame = CGRectMake(0, 0, 20, 30)
         
