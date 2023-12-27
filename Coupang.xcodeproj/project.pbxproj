@@ -17,6 +17,8 @@
 		D3A4BA852B32B65B003001C7 /* CoupangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BA842B32B65B003001C7 /* CoupangUITests.swift */; };
 		D3A4BA872B32B65B003001C7 /* CoupangUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BA862B32B65B003001C7 /* CoupangUITestsLaunchTests.swift */; };
 		D3A4BA9E2B3C07EF003001C7 /* PagingKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3A4BA9D2B3C07EF003001C7 /* PagingKit */; };
+		D3A4BAB82B3C2E11003001C7 /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BAB72B3C2E11003001C7 /* MyVC.swift */; };
+		D3A4BABA2B3C3119003001C7 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4BAB92B3C3119003001C7 /* CustomSegmentedControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		D3A4BA802B32B65B003001C7 /* CoupangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoupangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A4BA842B32B65B003001C7 /* CoupangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupangUITests.swift; sourceTree = "<group>"; };
 		D3A4BA862B32B65B003001C7 /* CoupangUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupangUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D3A4BAB72B3C2E11003001C7 /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
+		D3A4BAB92B3C3119003001C7 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				D3A4BA652B32B659003001C7 /* SceneDelegate.swift */,
 				D3A4BA672B32B659003001C7 /* LoginVC.swift */,
 				D3A4BA692B32B659003001C7 /* Main.storyboard */,
+				D3A4BAB72B3C2E11003001C7 /* MyVC.swift */,
+				D3A4BAB92B3C3119003001C7 /* CustomSegmentedControl.swift */,
 				D3A4BA6C2B32B65B003001C7 /* Assets.xcassets */,
 				D3A4BA6E2B32B65B003001C7 /* LaunchScreen.storyboard */,
 				D3A4BA712B32B65B003001C7 /* Info.plist */,
@@ -266,6 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A4BAB82B3C2E11003001C7 /* MyVC.swift in Sources */,
+				D3A4BABA2B3C3119003001C7 /* CustomSegmentedControl.swift in Sources */,
 				D3A4BA682B32B659003001C7 /* LoginVC.swift in Sources */,
 				D3A4BA642B32B659003001C7 /* AppDelegate.swift in Sources */,
 				D3A4BA662B32B659003001C7 /* SceneDelegate.swift in Sources */,
