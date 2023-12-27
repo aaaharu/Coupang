@@ -12,6 +12,7 @@ class CustomSegmentedControl: UIView {
     
     private var buttons: [UIButton] = []
     private var selectedIndex: Int = 0
+    
 
     // 이벤트 처리 클로저
     var onSegmentChanged: ((Int) -> Void)?
@@ -25,10 +26,11 @@ class CustomSegmentedControl: UIView {
             buttons.append(button)
             addSubview(button)
             
-            setupActions()
+            
         }
         
-        
+        setupActions()
+       
         
     }
     
@@ -53,7 +55,14 @@ class CustomSegmentedControl: UIView {
            selectedIndex = sender.tag
         onSegmentChanged?(selectedIndex)
            // 선택된 세그먼트에 대한 시각적 강조 처리
+        updateButtonStyles()
        }
+    
+    fileprivate func updateButtonStyles() {
+        for (index, button) in buttons.enumerated() {
+            button.backgroundColor = index == selectedIndex ? .systemCyan : .clear
+        }
+    }
 
     
     
