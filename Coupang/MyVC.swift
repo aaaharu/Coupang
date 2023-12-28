@@ -9,6 +9,16 @@ import UIKit
 
 class MyVC: UIViewController, UICollectionViewDelegate, UITableViewDelegate {
 
+    
+
+    @IBOutlet weak var firstBtn: UIButton!
+    @IBOutlet weak var secondBtn: UIButton!
+    @IBOutlet weak var thirdBtn: UIButton!
+    @IBOutlet weak var fifthBtn: UIButton!
+    @IBOutlet weak var forthBtn: UIButton!
+    @IBOutlet weak var sixthBtn: UIButton!
+    
+    
     @IBOutlet weak var myTableView: UITableView!
     private var currentSegmentIndex = 0
     
@@ -48,14 +58,39 @@ class MyVC: UIViewController, UICollectionViewDelegate, UITableViewDelegate {
         myTableView.delegate = self
         myTableView.dataSource = self
         
-       
+        firstBtn.layer.cornerRadius = 13
+        firstBtn.layer.borderColor = UIColor.lightGray.cgColor
+        firstBtn.layer.borderWidth = 1
+        
+        secondBtn.layer.cornerRadius = 13
+        secondBtn.layer.borderColor = UIColor.lightGray.cgColor
+        secondBtn.layer.borderWidth = 1
+        
+        thirdBtn.layer.cornerRadius = 13
+        thirdBtn.layer.borderColor = UIColor.lightGray.cgColor
+        thirdBtn.layer.borderWidth = 1
+        
+        forthBtn.layer.cornerRadius = 13
+        forthBtn.layer.borderColor = UIColor.lightGray.cgColor
+        forthBtn.layer.borderWidth = 1
+        
+        fifthBtn.layer.cornerRadius = 13
+        fifthBtn.layer.borderColor = UIColor.lightGray.cgColor
+        fifthBtn.layer.borderWidth = 1
+        
+        sixthBtn.layer.cornerRadius = 13
+        sixthBtn.layer.borderColor = UIColor.lightGray.cgColor
+        sixthBtn.layer.borderWidth = 1
+        
+        
+        
         
     }
     
     fileprivate func fetchCollectionViewData() {
             print(#fileID, #function, #line, "- <# 주석 #>")
         
-        let dataArray = ["생활", "코디", "여가", "반려생활"]
+        let dataArray = ["생활", "코디", "여가", "반려생활", "매거진"]
         collectionArray.append(contentsOf: dataArray)
         myCollectionView.reloadData()
         
@@ -64,7 +99,7 @@ class MyVC: UIViewController, UICollectionViewDelegate, UITableViewDelegate {
     fileprivate func fetchTableViewData() {
         print(#fileID, #function, #line, "- <# 주석 #>")
     
-    let firstDataArray = ["트래킹", "전시", "데이트", "일상"]
+    let firstDataArray = ["트래킹", "전시", "데이트", "일상", "아우터", "이너", "언더웨어", "원피스", "치마", "바지"]
     let secondDataArray = ["아리랑", "아라리요", "아리랑고개", "넘어간다"]
     
     firstTableViewArray.append(contentsOf: firstDataArray)
@@ -111,6 +146,12 @@ extension MyVC: UICollectionViewDataSource {
         
         if let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell {
             
+            cell.layer.cornerRadius = 10
+            cell.layer.masksToBounds = true
+            
+            cell.imageView.layer.cornerRadius = 10
+            cell.layer.masksToBounds = true
+            
             cell.titleLabel.text = collectionArray[indexPath.row]
             
             return cell
@@ -127,13 +168,15 @@ extension MyVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 현재 세그먼트 인덱스에 따른 데이터 배열의 크기 반환
         
-        if currentSegmentIndex == 0 {
+        switch currentSegmentIndex {
+        case 0:
             return firstTableViewArray.count
-        } else if currentSegmentIndex == 1 {
+        case 1:
             return secondTableViewArray.count
+        default:
+            return 0
         }
-        
-         return 0
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -141,8 +184,12 @@ extension MyVC: UITableViewDataSource {
         print(#fileID, #function, #line, "- 선택된 세그먼트: \(currentSegmentIndex)")
         
         if let cell = myTableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell {
+            
+           
+            
             if currentSegmentIndex == 0 {
                 cell.titleLabel.text = firstTableViewArray[indexPath.row]
+            
             } else if currentSegmentIndex == 1 {
                 cell.titleLabel.text = secondTableViewArray[indexPath.row]
             }
