@@ -146,12 +146,6 @@ extension MyVC: UICollectionViewDataSource {
         
         if let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell {
             
-            cell.layer.cornerRadius = 10
-            cell.layer.masksToBounds = true
-            
-            cell.imageView.layer.cornerRadius = 10
-            cell.layer.masksToBounds = true
-            
             cell.titleLabel.text = collectionArray[indexPath.row]
             
             return cell
@@ -185,20 +179,25 @@ extension MyVC: UITableViewDataSource {
         
         if let cell = myTableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell {
             
-           
+            cell.titleLabel.text = tableViewCell(currentSegmentIndex: currentSegmentIndex, indexPath: indexPath)
             
-            if currentSegmentIndex == 0 {
-                cell.titleLabel.text = firstTableViewArray[indexPath.row]
-            
-            } else if currentSegmentIndex == 1 {
-                cell.titleLabel.text = secondTableViewArray[indexPath.row]
-            }
             return cell
         }
         return UITableViewCell()
     }
     
-    
-    
+    fileprivate func tableViewCell(currentSegmentIndex: Int, indexPath: IndexPath) -> String {
+        print(#fileID, #function, #line, "- <# 주석 #>")
+        
+        switch currentSegmentIndex {
+            
+        case 0:
+            return firstTableViewArray[indexPath.row]
+        case 1:
+            return secondTableViewArray[indexPath.row]
+        default:
+            return ""
+        }
+    }
     
 }
